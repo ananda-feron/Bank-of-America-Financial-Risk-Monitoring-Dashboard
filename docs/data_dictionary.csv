@@ -1,0 +1,51 @@
+metric,unit,value_type,definition_or_formula,available_years
+allowance_for_credit_losses,USD,calculated,loan_loss_allowance + unfunded_credit_loss_allowance,"2021,2022,2023,2024,2025"
+allowance_for_credit_losses_yoy,pure,calculated,(allowance_for_credit_losses[t] - allowance_for_credit_losses[t-1]) / allowance_for_credit_losses[t-1],"2021,2022,2023,2024,2025"
+allowance_to_loans_ratio,pure,calculated,loan_loss_allowance / total_loans,"2021,2022,2023,2024,2025"
+cash_and_cash_equivalents,USD,reported,"BOA balance-sheet cash and cash equivalents. Broader taxonomy name includes restricted cash; use issuer label, not an unrestricted liquidity claim. Verified in 2025 balance sheet.","2021,2022,2023,2024,2025"
+cash_to_assets_ratio,pure,calculated,cash_and_cash_equivalents / total_assets,"2021,2022,2023,2024,2025"
+cet1_ratio,pure,reported,"Capital Management: consolidated corporation CET1 ratio, standardized approach; capture actual ratio, not minimum requirement.",
+common_equity,USD,calculated,total_equity - preferred_equity,"2021,2022,2023,2024,2025"
+common_equity_yoy,pure,calculated,(common_equity[t] - common_equity[t-1]) / common_equity[t-1],"2021,2022,2023,2024,2025"
+efficiency_ratio_calculated,pure,calculated,noninterest_expense / total_revenue,"2021,2022,2023,2024,2025"
+efficiency_ratio_reported,pure,reported,Financial Highlights: reported efficiency ratio; record GAAP/FTE basis and adjustments.,
+equity_to_assets_ratio,pure,calculated,total_equity / total_assets,"2021,2022,2023,2024,2025"
+loan_credit_loss_provision,USD,reported,Funded loan/lease provision; negative denotes reserve release. Not total provision alone.,"2021,2022,2023,2024,2025"
+loan_loss_allowance,USD,reported,Funded loan/lease allowance; numerator for allowance-to-loans ratio.,"2021,2022,2023,2024,2025"
+loan_to_deposit_ratio,pure,calculated,total_loans / total_deposits,"2021,2022,2023,2024,2025"
+net_charge_off_ratio,pure,calculated,"net_charge_offs / mean(total_loans[t-1], total_loans[t])","2022,2023,2024,2025"
+net_charge_offs,USD,reported,Loan and lease write-offs net of recoveries; positive denotes credit losses.,"2021,2022,2023,2024,2025"
+net_charge_offs_yoy,pure,calculated,(net_charge_offs[t] - net_charge_offs[t-1]) / net_charge_offs[t-1],"2021,2022,2023,2024,2025"
+net_income,USD,reported,"Annual net income attributable to parent, before preferred dividends.","2021,2022,2023,2024,2025"
+net_income_yoy,pure,calculated,(net_income[t] - net_income[t-1]) / net_income[t-1],"2021,2022,2023,2024,2025"
+net_interest_income,USD,reported,GAAP net interest income; not fully taxable equivalent (FTE).,"2021,2022,2023,2024,2025"
+net_interest_income_yoy,pure,calculated,(net_interest_income[t] - net_interest_income[t-1]) / net_interest_income[t-1],"2021,2022,2023,2024,2025"
+net_interest_margin_reported,pure,reported,Average Balances and Interest Rates table: net interest yield/margin; document FTE basis.,
+noninterest_expense,USD,reported,Annual noninterest expense for GAAP efficiency calculation.,"2021,2022,2023,2024,2025"
+preferred_equity,USD,reported,Preferred equity carrying value including paid-in capital.,"2021,2022,2023,2024,2025"
+provision_for_credit_losses,USD,calculated,loan_credit_loss_provision + unfunded_credit_loss_provision,"2021,2022,2023,2024,2025"
+provision_for_credit_losses_yoy,pure,calculated,(provision_for_credit_losses[t] - provision_for_credit_losses[t-1]) / provision_for_credit_losses[t-1],"2021,2023,2024,2025"
+risk_weighted_assets,USD,reported,"Capital Management / regulatory capital table: consolidated corporation, standardized approach, year-end. Do not substitute bank subsidiary or advanced approach.",
+roa_calculated,pure,calculated,"net_income / mean(total_assets[t-1], total_assets[t])","2021,2022,2023,2024,2025"
+roa_reported,pure,reported,"Financial Highlights: return on average assets, actual reported average denominator.",
+roe_calculated,pure,calculated,"net_income / mean(total_equity[t-1], total_equity[t])","2021,2022,2023,2024,2025"
+roe_reported,pure,reported,Financial Highlights: return on average common equity; keep separate from calculated total-equity ROE.,
+tier1_capital_ratio,pure,reported,"Regulatory capital table: consolidated corporation Tier 1 ratio, standardized approach.",
+tier1_leverage_ratio,pure,reported,Regulatory capital table: Tier 1 leverage ratio; not supplementary leverage ratio.,
+total_assets,USD,reported,Consolidated total assets at December 31.,"2021,2022,2023,2024,2025"
+total_assets_yoy,pure,calculated,(total_assets[t] - total_assets[t-1]) / total_assets[t-1],"2021,2022,2023,2024,2025"
+total_capital_ratio,pure,reported,"Regulatory capital table: consolidated corporation total capital ratio, standardized approach.",
+total_deposits,USD,reported,Consolidated deposits at December 31.,"2021,2022,2023,2024,2025"
+total_deposits_yoy,pure,calculated,(total_deposits[t] - total_deposits[t-1]) / total_deposits[t-1],"2021,2022,2023,2024,2025"
+total_equity,USD,reported,"Total parent shareholders equity, including preferred equity.","2021,2022,2023,2024,2025"
+total_loans,USD,reported,"Gross loans and leases before allowance, excluding accrued interest; held-for-sale loans excluded. Verified against 2025 consolidated balance sheet.","2021,2022,2023,2024,2025"
+total_loans_yoy,pure,calculated,(total_loans[t] - total_loans[t-1]) / total_loans[t-1],"2022,2023,2024,2025"
+total_revenue,USD,reported,BOA annual GAAP total revenue net of interest expense; not gross interest plus fee income.,"2021,2022,2023,2024,2025"
+total_revenue_yoy,pure,calculated,(total_revenue[t] - total_revenue[t-1]) / total_revenue[t-1],"2021,2022,2023,2024,2025"
+trading_asset_exposure,pure,calculated,trading_assets / total_assets,"2021,2022,2023,2024,2025"
+trading_assets,USD,reported,BOA trading account assets; does not include separately presented derivative assets.,"2021,2022,2023,2024,2025"
+trading_assets_yoy,pure,calculated,(trading_assets[t] - trading_assets[t-1]) / trading_assets[t-1],"2021,2022,2023,2024,2025"
+trading_liabilities,USD,reported,BOA trading account liabilities; derivatives are separately presented.,"2021,2022,2023,2024,2025"
+trading_liabilities_yoy,pure,calculated,(trading_liabilities[t] - trading_liabilities[t-1]) / trading_liabilities[t-1],"2021,2022,2023,2024,2025"
+unfunded_credit_loss_allowance,USD,reported,Allowance for unfunded lending commitments.,"2021,2022,2023,2024,2025"
+unfunded_credit_loss_provision,USD,reported,"Credit-loss provision for unfunded lending commitments, added to funded provision.","2021,2022,2023,2024,2025"

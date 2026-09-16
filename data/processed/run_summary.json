@@ -1,0 +1,15 @@
+{
+  "as_of": "2026-09-16",
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "selected_reported_values": 85,
+  "missing_metric_years": 48,
+  "snapshot_sha256": "1760e6ebe73c877e7549ad76a6027a00fe9fdd155c659d91ca370e5e622d8895",
+  "ratio_unit": "fraction; format as percent",
+  "annual_rows": 5
+}

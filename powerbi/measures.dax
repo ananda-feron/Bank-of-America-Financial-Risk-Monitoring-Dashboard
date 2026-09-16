@@ -1,0 +1,110 @@
+// Create this calculated table first. Set relationships as described in the guide.
+DimYear = SELECTCOLUMNS(GENERATESERIES(2021, 2025, 1), "fiscal_year", [Value])
+
+// Optional calculated column on DimYear; sort by fiscal_year.
+Year Label = FORMAT(DimYear[fiscal_year], "0")
+
+// Add each following expression as a separate measure on FinancialRisk.
+// Single-year gating prevents cross-year summation of stocks and ratios.
+Total Assets USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[total_assets]) / 1000000000)
+
+Loans USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[total_loans]) / 1000000000)
+
+Deposits USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[total_deposits]) / 1000000000)
+
+Total Revenue USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[total_revenue]) / 1000000000)
+
+Net Income USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[net_income]) / 1000000000)
+
+Net Interest Income USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[net_interest_income]) / 1000000000)
+
+Net Charge-offs USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[net_charge_offs]) / 1000000000)
+
+Total Provision USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[provision_for_credit_losses]) / 1000000000)
+
+Funded Allowance USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[loan_loss_allowance]) / 1000000000)
+
+Unfunded Allowance USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[unfunded_credit_loss_allowance]) / 1000000000)
+
+Total Allowance USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[allowance_for_credit_losses]) / 1000000000)
+
+Common Equity USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[common_equity]) / 1000000000)
+
+Trading Assets USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[trading_assets]) / 1000000000)
+
+Trading Liabilities USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[trading_liabilities]) / 1000000000)
+
+// Ratios are fractions; apply Percentage formatting, not *100.
+Loan/Deposit =
+IF(HASONEVALUE(DimYear[fiscal_year]),
+    DIVIDE(SELECTEDVALUE(FinancialRisk[total_loans]), SELECTEDVALUE(FinancialRisk[total_deposits])))
+
+Cash/Assets =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[cash_to_assets_ratio]))
+
+Total Equity/Assets =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[equity_to_assets_ratio]))
+
+Funded Allowance/Loans =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[allowance_to_loans_ratio]))
+
+Approximate Net Charge-off Ratio =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[net_charge_off_ratio]))
+
+Trading Asset Exposure =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[trading_asset_exposure]))
+
+Calculated ROA =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[roa_calculated]))
+
+Calculated ROE =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[roe_calculated]))
+
+Calculated Efficiency =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[efficiency_ratio_calculated]))
+
+Revenue YoY =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[total_revenue_yoy]))
+
+Net Income YoY =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[net_income_yoy]))
+
+Net Charge-offs YoY =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[net_charge_offs_yoy]))
+
+RWA USD bn =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[risk_weighted_assets]) / 1000000000)
+
+CET1 =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[cet1_ratio]))
+
+Tier 1 Capital =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[tier1_capital_ratio]))
+
+Total Capital =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[total_capital_ratio]))
+
+Tier 1 Leverage =
+IF(HASONEVALUE(DimYear[fiscal_year]), SELECTEDVALUE(FinancialRisk[tier1_leverage_ratio]))
+
+Missing Metric Cells = COUNTROWS(MissingValues)
+
+Regulatory Data Status =
+IF(NOT HASONEVALUE(DimYear[fiscal_year]), "Select one year",
+    IF(ISBLANK([CET1]) || ISBLANK([RWA USD bn]) || ISBLANK([Tier 1 Capital]) ||
+       ISBLANK([Total Capital]) || ISBLANK([Tier 1 Leverage]),
+       "Incomplete: annual-report extraction required", "Available"))

@@ -1,0 +1,12 @@
+{
+  "name": "Annual Financial Risk",
+  "dataColors": ["#17324D", "#2474AB", "#168A87", "#B77B29", "#A2444C", "#6C7280"],
+  "background": "#F6F8FA",
+  "foreground": "#172B3A",
+  "tableAccent": "#2474AB",
+  "textClasses": {
+    "title": {"fontFace": "Segoe UI", "fontSize": 16},
+    "label": {"fontFace": "Segoe UI", "fontSize": 11},
+    "callout": {"fontFace": "Segoe UI", "fontSize": 28}
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000070858.json",
+  "retrieved_at_utc": "2026-09-16T17:34:47.386063+00:00",
+  "sha256": "1760e6ebe73c877e7549ad76a6027a00fe9fdd155c659d91ca370e5e622d8895",
+  "cik": 70858,
+  "api_entity_name": "BofA Finance LLC",
+  "intended_entity": "Bank of America Corporation",
+  "identity_verification": "CIK and 2025 accession verified against SEC filing index; API label retained verbatim.",
+  "identity_source": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000157/0000070858-26-000157-index.html"
+}

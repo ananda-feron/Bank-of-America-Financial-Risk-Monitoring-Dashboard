@@ -1,0 +1,255 @@
+[
+  {
+    "metric": "total_assets",
+    "tags": [
+      "us-gaap:Assets"
+    ],
+    "definition": "Consolidated total assets at December 31.",
+    "period": "instant",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "total_loans",
+    "tags": [
+      "us-gaap:FinancingReceivableExcludingAccruedInterestBeforeAllowanceForCreditLoss"
+    ],
+    "definition": "Gross loans and leases before allowance, excluding accrued interest; held-for-sale loans excluded. Verified against 2025 consolidated balance sheet.",
+    "period": "instant",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "total_deposits",
+    "tags": [
+      "us-gaap:Deposits"
+    ],
+    "definition": "Consolidated deposits at December 31.",
+    "period": "instant",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "cash_and_cash_equivalents",
+    "tags": [
+      "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents"
+    ],
+    "definition": "BOA balance-sheet cash and cash equivalents. Broader taxonomy name includes restricted cash; use issuer label, not an unrestricted liquidity claim. Verified in 2025 balance sheet.",
+    "period": "instant",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "net_income",
+    "tags": [
+      "us-gaap:NetIncomeLoss"
+    ],
+    "definition": "Annual net income attributable to parent, before preferred dividends.",
+    "period": "duration",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "total_revenue",
+    "tags": [
+      "us-gaap:Revenues"
+    ],
+    "definition": "BOA annual GAAP total revenue net of interest expense; not gross interest plus fee income.",
+    "period": "duration",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "net_interest_income",
+    "tags": [
+      "us-gaap:InterestIncomeExpenseNet"
+    ],
+    "definition": "GAAP net interest income; not fully taxable equivalent (FTE).",
+    "period": "duration",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "net_charge_offs",
+    "tags": [
+      "us-gaap:FinancingReceivableExcludingAccruedInterestAllowanceForCreditLossWriteoffAfterRecovery",
+      "us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery"
+    ],
+    "definition": "Loan and lease write-offs net of recoveries; positive denotes credit losses.",
+    "period": "duration",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "loan_credit_loss_provision",
+    "tags": [
+      "us-gaap:FinancingReceivableExcludingAccruedInterestCreditLossExpenseReversal",
+      "us-gaap:ProvisionForLoanLossesExpensed"
+    ],
+    "definition": "Funded loan/lease provision; negative denotes reserve release. Not total provision alone.",
+    "period": "duration",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "unfunded_credit_loss_provision",
+    "tags": [
+      "us-gaap:OffBalanceSheetCreditLossLiabilityCreditLossExpenseReversal"
+    ],
+    "definition": "Credit-loss provision for unfunded lending commitments, added to funded provision.",
+    "period": "duration",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "loan_loss_allowance",
+    "tags": [
+      "us-gaap:FinancingReceivableAllowanceForCreditLossExcludingAccruedInterest",
+      "us-gaap:FinancingReceivableAllowanceForCreditLosses"
+    ],
+    "definition": "Funded loan/lease allowance; numerator for allowance-to-loans ratio.",
+    "period": "instant",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "unfunded_credit_loss_allowance",
+    "tags": [
+      "us-gaap:OffBalanceSheetCreditLossLiability"
+    ],
+    "definition": "Allowance for unfunded lending commitments.",
+    "period": "instant",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "total_equity",
+    "tags": [
+      "us-gaap:StockholdersEquity"
+    ],
+    "definition": "Total parent shareholders equity, including preferred equity.",
+    "period": "instant",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "preferred_equity",
+    "tags": [
+      "us-gaap:PreferredStockIncludingAdditionalPaidInCapital"
+    ],
+    "definition": "Preferred equity carrying value including paid-in capital.",
+    "period": "instant",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "trading_assets",
+    "tags": [
+      "us-gaap:TradingSecurities"
+    ],
+    "definition": "BOA trading account assets; does not include separately presented derivative assets.",
+    "period": "instant",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "trading_liabilities",
+    "tags": [
+      "us-gaap:TradingLiabilities"
+    ],
+    "definition": "BOA trading account liabilities; derivatives are separately presented.",
+    "period": "instant",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "noninterest_expense",
+    "tags": [
+      "us-gaap:NoninterestExpense"
+    ],
+    "definition": "Annual noninterest expense for GAAP efficiency calculation.",
+    "period": "duration",
+    "unit": "USD",
+    "manual_note": ""
+  },
+  {
+    "metric": "risk_weighted_assets",
+    "tags": [
+      "us-gaap:RiskWeightedAssets"
+    ],
+    "definition": "Capital Management / regulatory capital table: consolidated corporation, standardized approach, year-end. Do not substitute bank subsidiary or advanced approach.",
+    "period": "instant",
+    "unit": "USD",
+    "manual_note": "Manual annual-report extraction required: Capital Management / regulatory capital table: consolidated corporation, standardized approach, year-end. Do not substitute bank subsidiary or advanced approach."
+  },
+  {
+    "metric": "net_interest_margin_reported",
+    "tags": [],
+    "definition": "Average Balances and Interest Rates table: net interest yield/margin; document FTE basis.",
+    "period": "duration",
+    "unit": "pure",
+    "manual_note": "Manual annual-report extraction required: Average Balances and Interest Rates table: net interest yield/margin; document FTE basis."
+  },
+  {
+    "metric": "roa_reported",
+    "tags": [],
+    "definition": "Financial Highlights: return on average assets, actual reported average denominator.",
+    "period": "duration",
+    "unit": "pure",
+    "manual_note": "Manual annual-report extraction required: Financial Highlights: return on average assets, actual reported average denominator."
+  },
+  {
+    "metric": "roe_reported",
+    "tags": [],
+    "definition": "Financial Highlights: return on average common equity; keep separate from calculated total-equity ROE.",
+    "period": "duration",
+    "unit": "pure",
+    "manual_note": "Manual annual-report extraction required: Financial Highlights: return on average common equity; keep separate from calculated total-equity ROE."
+  },
+  {
+    "metric": "cet1_ratio",
+    "tags": [],
+    "definition": "Capital Management: consolidated corporation CET1 ratio, standardized approach; capture actual ratio, not minimum requirement.",
+    "period": "instant",
+    "unit": "pure",
+    "manual_note": "Manual annual-report extraction required: Capital Management: consolidated corporation CET1 ratio, standardized approach; capture actual ratio, not minimum requirement."
+  },
+  {
+    "metric": "tier1_capital_ratio",
+    "tags": [
+      "us-gaap:TierOneRiskBasedCapitalToRiskWeightedAssets"
+    ],
+    "definition": "Regulatory capital table: consolidated corporation Tier 1 ratio, standardized approach.",
+    "period": "instant",
+    "unit": "pure",
+    "manual_note": "Manual annual-report extraction required: Regulatory capital table: consolidated corporation Tier 1 ratio, standardized approach."
+  },
+  {
+    "metric": "total_capital_ratio",
+    "tags": [
+      "us-gaap:CapitalToRiskWeightedAssets"
+    ],
+    "definition": "Regulatory capital table: consolidated corporation total capital ratio, standardized approach.",
+    "period": "instant",
+    "unit": "pure",
+    "manual_note": "Manual annual-report extraction required: Regulatory capital table: consolidated corporation total capital ratio, standardized approach."
+  },
+  {
+    "metric": "tier1_leverage_ratio",
+    "tags": [
+      "us-gaap:TierOneLeverageCapitalRatio"
+    ],
+    "definition": "Regulatory capital table: Tier 1 leverage ratio; not supplementary leverage ratio.",
+    "period": "instant",
+    "unit": "pure",
+    "manual_note": "Manual annual-report extraction required: Regulatory capital table: Tier 1 leverage ratio; not supplementary leverage ratio."
+  },
+  {
+    "metric": "efficiency_ratio_reported",
+    "tags": [],
+    "definition": "Financial Highlights: reported efficiency ratio; record GAAP/FTE basis and adjustments.",
+    "period": "duration",
+    "unit": "pure",
+    "manual_note": "Manual annual-report extraction required: Financial Highlights: reported efficiency ratio; record GAAP/FTE basis and adjustments."
+  }
+]
